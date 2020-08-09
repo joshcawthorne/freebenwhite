@@ -244,7 +244,7 @@ function Index() {
           appId: 2553726171554034,
           cookie: true,
           xfbml: true,
-          version: "v2.1",
+          version: "v8.0",
         });
       };
     }
