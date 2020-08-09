@@ -193,6 +193,10 @@ function Index() {
         })
         .catch(function (error) {
           console.log("Error getting document:", error);
+          console.log(
+            "%c Nice going. You maxed out my firebase allowance in an hour. ",
+            "background: #19213A; color: #FFC439"
+          );
           setcounter(10287);
           setTimeout(() => {
             setloading(false);
@@ -223,7 +227,7 @@ function Index() {
 
   useEffect(() => {
     if (windowGlobal) {
-      console.log("%c #FreeBenWhite ", "background: #222; color: #bada55");
+      console.log("%c #FreeBenWhite ", "background: #19213A; color: #FFC439");
       getCount();
     }
   });
