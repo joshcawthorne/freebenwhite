@@ -172,7 +172,7 @@ const TweetAnim = {
 const windowGlobal = typeof window !== "undefined" && window;
 
 function Index() {
-  const [counter, setcounter] = useState();
+  const [counter, setcounter] = useState(10387);
   const [loading, setloading] = useState(true);
   if (windowGlobal) {
     var db = firebase.firestore();
@@ -193,6 +193,7 @@ function Index() {
         })
         .catch(function (error) {
           console.log("Error getting document:", error);
+          setcounter(10287);
         });
     }
   }
