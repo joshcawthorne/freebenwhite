@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import sharingImg from "../images/logo.jpg";
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -36,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={"Free Ben White"}
       meta={[
-        { name: `og:image`, content: site.siteMetadata.image },
+        { name: `og:image`, content: sharingImg },
         {
           name: `description`,
           content:
@@ -70,8 +71,8 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-        { name: `twitter:image`, content: site.siteMetadata.image },
-        { name: `image`, content: site.siteMetadata.image },
+        { name: `twitter:image`, content: sharingImg },
+        { name: `image`, content: sharingImg },
         { name: `og:url`, content: `https://www.freebenwhite.com` },
       ].concat(meta)}
     />
