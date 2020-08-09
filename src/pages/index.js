@@ -38,6 +38,7 @@ const FreedContainer = styled.div`
   margin-bottom: 50px;
   @media (max-width: 768px) {
     margin: 0 20px;
+    height: 50%;
   }
 `;
 
