@@ -203,7 +203,7 @@ function Index() {
         // This code may get re-run multiple times if there are conflicts.
         return transaction.get(docRef).then(function (counterDoc) {
           if (!counterDoc.exists) {
-            throw "Document does not exist!";
+            console.log("Error getting document:", error);
           }
           let data = counterDoc.data();
           var newCount = data.count + 1;
