@@ -301,9 +301,7 @@ function Index() {
               >
                 <span>Tweet</span> Your Support
               </Tweet>
-              <Tweet onClick={facebookPost}>
-                Share on <span>Facebook</span>
-              </Tweet>
+
               <Tweet
                 href={
                   "https://api.whatsapp.com/send?text=" +
