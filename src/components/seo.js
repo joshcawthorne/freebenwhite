@@ -31,51 +31,56 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={"Free Ben White"}
-      meta={[
-        { name: `og:image`, content: sharingImg },
-        {
-          name: `description`,
-          content:
-            "Help free Ben White from his captors in the South Coast of England.",
-        },
-        {
-          property: `og:title`,
-          content: `Free Ben White`,
-        },
-        {
-          property: `og:description`,
-          content: `Help free Ben White from his captors in the South Coast of England.`,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        { name: `twitter:image`, content: sharingImg },
-        { name: `image`, content: sharingImg },
-        { name: `og:url`, content: `https://www.freebenwhite.com` },
-      ].concat(meta)}
-    />
+    <>
+      <Helment>
+        <meta name="twitter:image" content={sharingImg}></meta>
+      </Helment>
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={"Free Ben White"}
+        meta={[
+          { name: `og:image`, content: sharingImg },
+          {
+            name: `description`,
+            content:
+              "Help free Ben White from his captors in the South Coast of England.",
+          },
+          {
+            property: `og:title`,
+            content: `Free Ben White`,
+          },
+          {
+            property: `og:description`,
+            content: `Help free Ben White from his captors in the South Coast of England.`,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary_large_image`,
+          },
+          {
+            name: `twitter:creator`,
+            content: site.siteMetadata.author,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+          { name: `twitter:image`, content: sharingImg },
+          { name: `image`, content: sharingImg },
+          { name: `og:url`, content: `https://www.freebenwhite.com` },
+        ].concat(meta)}
+      />
+    </>
   );
 }
 
