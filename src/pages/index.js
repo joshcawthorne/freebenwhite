@@ -103,10 +103,10 @@ const windowGlobal = typeof window !== "undefined" && window;
 function Index() {
   const [counter, setcounter] = useState();
   const [loading, setloading] = useState(true);
-
-  var db = firebase.firestore();
-  var docRef = db.collection("counter").doc("counterStore");
-
+  if (windowGlobal) {
+    var db = firebase.firestore();
+    var docRef = db.collection("counter").doc("counterStore");
+  }
   function getCount() {
     if (windowGlobal) {
       console.log("getting");
