@@ -36,6 +36,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={"Free Ben White"}
       meta={[
+        { name: `og:image`, content: site.siteMetadata.image },
         {
           name: `description`,
           content:
@@ -71,7 +72,6 @@ function SEO({ description, lang, meta, title }) {
         },
         { name: `image`, content: site.siteMetadata.image },
         { name: `og:url`, content: `https://www.freebenwhite.com` },
-        { name: `og:image`, content: site.siteMetadata.image },
       ].concat(meta)}
     />
   );
