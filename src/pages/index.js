@@ -25,6 +25,10 @@ const PageContainer = styled.div`
   background-color: #19213a;
   color: #fff;
   text-align: center;
+  @media (max-width: 768px) {
+    height: 100%;
+    min-height: fit-content;
+  }
 `;
 
 const FreedContainer = styled.div`
