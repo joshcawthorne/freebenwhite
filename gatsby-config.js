@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Free Ben White`,
@@ -33,6 +37,17 @@ module.exports = {
       options: {
         fonts: [`Noto Sans TC`, `Karla`],
         display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: process.env.APIKEY,
+          projectId: process.env.PROJECT,
+          databaseURL: process.env.DATABASE,
+          authDomain: process.env.AUTH,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

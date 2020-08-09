@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import firebase from "firebase";
+import firebase from "gatsby-plugin-firebase";
 import CountUp from "react-countup";
 
 import Layout from "../components/layout";
@@ -92,59 +92,68 @@ const CounterContainer = styled.div`
   text-align: left;
 `;
 
+const windowGlobal = typeof window !== "undefined" && window;
+
 function Index() {
   const [counter, setcounter] = useState();
   const [loading, setloading] = useState(true);
+  if (windowGlobal) {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(FIREBASECONFIG);
+    }
 
-  if (!firebase.apps.length) {
-    firebase.initializeApp(FIREBASECONFIG);
+    var db = firebase.firestore();
+    var docRef = db.collection("counter").doc("counterStore");
   }
 
-  var db = firebase.firestore();
-  var docRef = db.collection("counter").doc("counterStore");
-
   function getCount() {
-    console.log("getting");
-    docRef
-      .get()
-      .then(function (doc) {
-        if (doc.exists) {
-          let data = doc.data();
-          console.log(data);
-          setcounter(data.count);
-          setloading(false);
-        }
-      })
-      .catch(function (error) {
-        console.log("Error getting document:", error);
-      });
+    if (windowGlobal) {
+      console.log("getting");
+      docRef
+        .get()
+        .then(function (doc) {
+          if (doc.exists) {
+            let data = doc.data();
+            console.log(data);
+            setcounter(data.count);
+            setloading(false);
+          }
+        })
+        .catch(function (error) {
+          console.log("Error getting document:", error);
+        });
+    }
   }
 
   function updateCount() {
-    db.runTransaction(function (transaction) {
-      // This code may get re-run multiple times if there are conflicts.
-      return transaction.get(docRef).then(function (counterDoc) {
-        if (!counterDoc.exists) {
-          throw "Document does not exist!";
-        }
-        let data = counterDoc.data();
+    if (windowGlobal) {
+      db.runTransaction(function (transaction) {
+        // This code may get re-run multiple times if there are conflicts.
+        return transaction.get(docRef).then(function (counterDoc) {
+          if (!counterDoc.exists) {
+            throw "Document does not exist!";
+          }
+          let data = counterDoc.data();
 
-        console.log(data.count);
-        var newCount = data.count + 1;
-        console.log(newCount);
-        transaction.update(docRef, { count: newCount });
-      });
-    })
-      .then(function () {
-        getCount();
+          console.log(data.count);
+          var newCount = data.count + 1;
+          console.log(newCount);
+          transaction.update(docRef, { count: newCount });
+        });
       })
-      .catch(function (error) {
-        console.log("Transaction failed: ", error);
-      });
+        .then(function () {
+          getCount();
+        })
+        .catch(function (error) {
+          console.log("Transaction failed: ", error);
+        });
+    }
   }
 
   useEffect(() => {
-    getCount();
+    if (windowGlobal) {
+      getCount();
+    }
   });
 
   return (
