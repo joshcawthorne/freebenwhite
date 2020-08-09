@@ -194,6 +194,9 @@ function Index() {
         .catch(function (error) {
           console.log("Error getting document:", error);
           setcounter(10287);
+          setTimeout(() => {
+            setloading(false);
+          }, 1500);
         });
     }
   }
@@ -204,7 +207,7 @@ function Index() {
         // This code may get re-run multiple times if there are conflicts.
         return transaction.get(docRef).then(function (counterDoc) {
           if (!counterDoc.exists) {
-            console.log("Error getting document:", error);
+            console.log("Error getting document");
           }
           let data = counterDoc.data();
           var newCount = data.count + 1;
