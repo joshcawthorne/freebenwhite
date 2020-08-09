@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -19,33 +19,35 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            image
+            url
           }
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={"Free Ben White"}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content:
+            "Help free Ben White from his captors in the South Coast of England.",
         },
         {
           property: `og:title`,
-          content: title,
+          content: `Free Ben White`,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: `Help free Ben White from his captors in the South Coast of England.`,
         },
         {
           property: `og:type`,
@@ -67,22 +69,25 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        { name: `image`, content: site.siteMetadata.image },
+        { name: `og:url`, content: `https://www.freebenwhite.com` },
+        { name: `og:image`, content: site.siteMetadata.image },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;
