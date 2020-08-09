@@ -252,8 +252,8 @@ function Index() {
 
   function facebookPost() {
     window.FB.ui({
-      method: "send",
-      link: "https://www.freebenwhite.com",
+      method: "share",
+      href: "https://www.freebenwhite.com",
     });
   }
 
@@ -301,6 +301,9 @@ function Index() {
               >
                 <span>Tweet</span> Your Support
               </Tweet>
+              <Tweet onClick={facebookPost}>
+                Share on <span>Facebook</span>
+              </Tweet>
               <Tweet
                 href={
                   "https://api.whatsapp.com/send?text=" +
@@ -309,9 +312,6 @@ function Index() {
                 target="_blank"
               >
                 Send on <span>WhatsApp</span>
-              </Tweet>
-              <Tweet onClick={facebookPost}>
-                Send on <span>Facebook Messenger</span>
               </Tweet>
             </TweetContainer>
           </CounterOuterContainer>
