@@ -225,7 +225,7 @@ function Index() {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Free Ben White" />
       <PageContainer>
         <FreedContainer>
           <TitleContainer>
