@@ -223,6 +223,7 @@ function Index() {
 
   useEffect(() => {
     if (windowGlobal) {
+      console.log("%c #FreeBenWhite ", "background: #222; color: #bada55");
       getCount();
     }
   });
