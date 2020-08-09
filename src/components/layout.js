@@ -32,10 +32,10 @@ const FooterOuter = styled.div`
   align-items: center;
   background-color: #19213a;
   color: #fff;
+  padding: 10px 0px;
 `;
 
 const Footer = styled(motion.div)`
-  margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
   max-width: 1400px;

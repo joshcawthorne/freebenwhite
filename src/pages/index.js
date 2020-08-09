@@ -37,9 +37,11 @@ const FreedContainer = styled.div`
   min-height: 400px;
 
   margin-bottom: 50px;
-  @media (max-width: 768px) {
+  @media (max-width: 650px) {
     margin: 0 20px;
-    height: 50%;
+    height: 35%;
+  }
+  @media (max-height: 400px) {
   }
 `;
 
