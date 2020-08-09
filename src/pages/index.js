@@ -27,7 +27,8 @@ const PageContainer = styled.div`
   text-align: center;
   @media (max-width: 768px) {
     height: 100%;
-    min-height: fit-content;
+    min-height: 100vh;
+    min-height: webkit-fill-available;
   }
 `;
 
