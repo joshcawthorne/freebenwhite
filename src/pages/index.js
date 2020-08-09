@@ -31,8 +31,14 @@ const FreedContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 70vh;
+  height: 70%;
   margin: 0 50px;
+  min-height: 400px;
+
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
 `;
 
 const TitleContainer = styled.div``;
@@ -97,14 +103,9 @@ const windowGlobal = typeof window !== "undefined" && window;
 function Index() {
   const [counter, setcounter] = useState();
   const [loading, setloading] = useState(true);
-  if (windowGlobal) {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(FIREBASECONFIG);
-    }
 
-    var db = firebase.firestore();
-    var docRef = db.collection("counter").doc("counterStore");
-  }
+  var db = firebase.firestore();
+  var docRef = db.collection("counter").doc("counterStore");
 
   function getCount() {
     if (windowGlobal) {

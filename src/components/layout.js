@@ -15,7 +15,10 @@ import "./layout.css";
 const OuterContainer = styled.div`
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #19213a;
+  color: #fff;
 `;
 
 const FooterOuter = styled.div`
@@ -26,6 +29,8 @@ const FooterOuter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #19213a;
+  color: #fff;
 `;
 
 const Footer = styled.div`
