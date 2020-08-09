@@ -268,6 +268,7 @@ function Index() {
                   "https://twitter.com/intent/tweet?text=Free%20Ben%20White%21&hashtags=FreeBenWhite&url=https%3A%2F%2Fwww.freebenwhite.com"
                 }
                 target={"blank"}
+                onClick={updateCount}
               >
                 Click here to Tweet Your Support
               </Tweet>
