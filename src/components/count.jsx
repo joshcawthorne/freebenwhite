@@ -7,13 +7,15 @@ const Num = styled.div`
   font-weight: bold;
   margin-right: 5px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  width: 95%;
+  margin-left: 2.5%;
   span {
     color: #fff;
     font-weight: normal;
   }
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
 `;
@@ -22,6 +24,7 @@ function Count(data) {
   return (
     <CountUp
       end={data.data}
+      start={1000}
       duration={4.75}
       separator=" "
       delay={0}

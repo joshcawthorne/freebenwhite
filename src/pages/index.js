@@ -76,6 +76,7 @@ const Answer = styled(motion.div)`
   line-height: 160px;
   text-align: center;
   color: #ffc338;
+
   @media (max-width: 768px) {
     font-size: 120px;
     line-height: 80px;
@@ -83,9 +84,14 @@ const Answer = styled(motion.div)`
 `;
 
 const Tweet = styled.a`
-  font-size: 28px;
+  font-size: 20px;
   text-decoration: none;
-  color: #ffc338;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+  span {
+    color: #ffc338;
+  }
   @media (max-width: 768px) {
     font-size: 20px;
   }
@@ -96,7 +102,7 @@ const CounterOuterContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  min-height: 150px;
+  min-height: 175px;
 `;
 
 const CounterContainer = styled(motion.div)`
@@ -108,7 +114,10 @@ const CounterContainer = styled(motion.div)`
   text-align: left;
 `;
 
-const TweetContainer = styled(motion.div)``;
+const TweetContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+`;
 
 const TitleAnim = {
   hidden: {
@@ -229,8 +238,26 @@ function Index() {
     if (windowGlobal) {
       console.log("%c #FreeBenWhite ", "background: #19213A; color: #FFC439");
       getCount();
+
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          appId: 2553726171554034,
+          cookie: true,
+          xfbml: true,
+          version: "v2.1",
+        });
+      };
     }
   });
+
+  function facebookPost() {
+    window.FB.ui({
+      method: "send",
+      link: "https://www.freebenwhite.com",
+    });
+  }
+
+  function whatsAppPost() {}
 
   return (
     <Layout>
@@ -272,7 +299,19 @@ function Index() {
                 target={"blank"}
                 onClick={updateCount}
               >
-                Click here to Tweet Your Support
+                <span>Tweet</span> Your Support
+              </Tweet>
+              <Tweet
+                href={
+                  "https://api.whatsapp.com/send?text=" +
+                  "Free Ben White! https://www.freebenwhite.com"
+                }
+                target="_blank"
+              >
+                Send on <span>WhatsApp</span>
+              </Tweet>
+              <Tweet onClick={facebookPost}>
+                Send on <span>Facebook Messenger</span>
               </Tweet>
             </TweetContainer>
           </CounterOuterContainer>

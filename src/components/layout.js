@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 import "./layout.css";
 
@@ -101,6 +102,14 @@ const Layout = ({ children }) => {
 
   return (
     <OuterContainer>
+      <Helmet>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js"
+        ></script>
+      </Helmet>
       <main>{children}</main>
       <FooterOuter>
         <Footer>
