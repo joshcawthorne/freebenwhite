@@ -180,13 +180,11 @@ function Index() {
   }
   function getCount() {
     if (windowGlobal) {
-      console.log("getting");
       docRef
         .get()
         .then(function (doc) {
           if (doc.exists) {
             let data = doc.data();
-            console.log(data);
             setcounter(data.count);
             setTimeout(() => {
               setloading(false);
@@ -208,19 +206,14 @@ function Index() {
             throw "Document does not exist!";
           }
           let data = counterDoc.data();
-
-          console.log(data.count);
           var newCount = data.count + 1;
-          console.log(newCount);
           transaction.update(docRef, { count: newCount });
         });
       })
         .then(function () {
           getCount();
         })
-        .catch(function (error) {
-          console.log("Transaction failed: ", error);
-        });
+        .catch(function (error) {});
     }
   }
 
