@@ -241,11 +241,11 @@ function Index() {
 
       window.fbAsyncInit = function () {
         window.FB.init({
-          appId: 2553726171554034,
-          cookie: true,
+          appId: "638876779630334",
           xfbml: true,
           version: "v8.0",
         });
+        FB.AppEvents.logPageView();
       };
     }
   });
