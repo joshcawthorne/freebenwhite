@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
           async
           defer
           crossorigin="anonymous"
-          src="https://connect.facebook.net/en_US/all.js"
+          src="https://connect.facebook.net/en_US/sdk.js"
         ></script>
       </Helmet>
       <main>{children}</main>
