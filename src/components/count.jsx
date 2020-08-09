@@ -22,7 +22,7 @@ function Count(data) {
   return (
     <CountUp
       end={data.data}
-      duration={2.75}
+      duration={4.75}
       separator=" "
       delay={0}
       suffix={`<span> people have clicked to support the #FreeBenWhite movement.</span>`}

@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import { motion } from "framer-motion";
 
 import "./layout.css";
 
@@ -33,7 +34,7 @@ const FooterOuter = styled.div`
   color: #fff;
 `;
 
-const Footer = styled.div`
+const Footer = styled(motion.div)`
   margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
@@ -46,7 +47,7 @@ const Footer = styled.div`
   padding-left: 20px;
 `;
 
-const FooterLine = styled.div`
+const FooterLine = styled(motion.div)`
   width: 100%;
 `;
 
@@ -56,6 +57,36 @@ const Attribution = styled.a`
   margin-left: 0px;
   color: #ffc338;
 `;
+
+const FooterAnim1 = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 2.5,
+      duration: 0.2,
+    },
+  },
+};
+
+const FooterAnim2 = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 2.55,
+      duration: 0.2,
+    },
+  },
+};
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -73,7 +104,11 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <FooterOuter>
         <Footer>
-          <FooterLine>
+          <FooterLine
+            initial="hidden"
+            animate={"visible"}
+            variants={FooterAnim1}
+          >
             Created by{" "}
             <Attribution
               href={"https://www.twitter.com/cawthornejosh"}
@@ -83,7 +118,11 @@ const Layout = ({ children }) => {
             </Attribution>
             .
           </FooterLine>
-          <FooterLine>
+          <FooterLine
+            initial="hidden"
+            animate={"visible"}
+            variants={FooterAnim2}
+          >
             <Attribution
               href={"https://creativecommons.org/licenses/by-nc-sa/2.0/uk/"}
               target={"_blank"}
