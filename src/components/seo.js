@@ -42,9 +42,18 @@ function SEO({ description, lang, meta, title }) {
         }}
         title={"Free Ben White"}
         meta={[
-          { name: `og:image`, content: sharingImg },
-          { name: `twitter:image`, content: twitterImg },
-          { name: `image`, content: twitterImg },
+          {
+            name: `og:image`,
+            content: sharingImg,
+          },
+          {
+            name: `twitter:image`,
+            content: "https://www.freebenwhite.com" + twitterImg,
+          },
+          {
+            name: `image`,
+            content: "https://www.freebenwhite.com" + twitterImg,
+          },
           {
             name: `description`,
             content:
