@@ -8,7 +8,7 @@ module.exports = {
     description: `Help free Ben White from his captors in the South Coast of England.`,
     author: `@cawthornejosh`,
     url: `https://www.freebenwhite.com`,
-    image: "/images/logo.jpg",
+    image: `/images/logo.jpg`,
     twitterUsername: `@cawthornejosh`,
   },
   plugins: [
