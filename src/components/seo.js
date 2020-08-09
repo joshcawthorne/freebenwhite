@@ -32,9 +32,9 @@ function SEO({ description, lang, meta, title }) {
 
   return (
     <>
-      <Helment>
+      <Helmet>
         <meta name="twitter:image" content={sharingImg}></meta>
-      </Helment>
+      </Helmet>
       <Helmet
         htmlAttributes={{
           lang,
