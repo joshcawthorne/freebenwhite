@@ -241,7 +241,7 @@ function Index() {
 
       window.fbAsyncInit = function () {
         window.FB.init({
-          appId: 350110286390075,
+          appId: 638876779630334,
           cookie: true,
           xfbml: true,
           version: "v2.1",
@@ -301,9 +301,9 @@ function Index() {
               >
                 <span>Tweet</span> Your Support
               </Tweet>
-              {/*<Tweet onClick={facebookPost}>
+              <Tweet onClick={facebookPost}>
                 Share on <span>Facebook</span>
-              </Tweet>*/}
+              </Tweet>
               <Tweet
                 href={
                   "https://api.whatsapp.com/send?text=" +
