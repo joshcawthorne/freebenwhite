@@ -241,7 +241,7 @@ function Index() {
 
       window.fbAsyncInit = function () {
         window.FB.init({
-          appId: 638876779630334,
+          appId: 2553726171554034,
           cookie: true,
           xfbml: true,
           version: "v2.1",
