@@ -109,6 +109,10 @@ const Layout = ({ children }) => {
           crossorigin="anonymous"
           src="https://connect.facebook.net/en_US/sdk.js"
         ></script>
+        <meta
+          name="google-site-verification"
+          content="jQmuHIK4lBFn7hkLEycdE12EqqWg2LQk1d1IuoJXOXc"
+        />
       </Helmet>
       <main>{children}</main>
       <FooterOuter>
