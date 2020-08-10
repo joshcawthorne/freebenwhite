@@ -308,6 +308,7 @@ function Index() {
                   "Free Ben White! https://www.freebenwhite.com"
                 }
                 target="_blank"
+                onClick={updateCount}
               >
                 Send on <span>WhatsApp</span>
               </Tweet>
