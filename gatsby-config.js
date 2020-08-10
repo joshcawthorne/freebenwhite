@@ -10,6 +10,7 @@ module.exports = {
     url: `https://www.freebenwhite.com`,
     image: `/images/logo.jpg`,
     twitterUsername: `@cawthornejosh`,
+    siteUrl: `https://www.freebenwhite.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -67,6 +68,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-open-graph-images`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
