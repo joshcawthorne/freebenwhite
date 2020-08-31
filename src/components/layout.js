@@ -120,20 +120,6 @@ const Layout = ({ children }) => {
           <FooterLine
             initial="hidden"
             animate={"visible"}
-            variants={FooterAnim1}
-          >
-            Created by{" "}
-            <Attribution
-              href={"https://www.twitter.com/cawthornejosh"}
-              target={"_blank"}
-            >
-              @cawthornejosh
-            </Attribution>
-            .
-          </FooterLine>
-          <FooterLine
-            initial="hidden"
-            animate={"visible"}
             variants={FooterAnim2}
           >
             <Attribution
