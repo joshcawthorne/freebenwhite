@@ -117,18 +117,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <FooterOuter>
         <Footer>
-          <FooterLine
-            initial="hidden"
-            animate={"visible"}
-            variants={FooterAnim2}
-          >
-            <Attribution
-              href={"https://creativecommons.org/licenses/by-nc-sa/2.0/uk/"}
-              target={"_blank"}
-            >
-              Some rights reserved.
-            </Attribution>
-          </FooterLine>
+          
         </Footer>
       </FooterOuter>
     </OuterContainer>
