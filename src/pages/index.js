@@ -265,7 +265,7 @@ function Index() {
       <PageContainer>
         <FreedContainer>
           <TitleContainer>
-            <Title></Title>
+            <Title>Is Ben White free?</Title>
           </TitleContainer>
           <QuestionContainer>
             <Answer initial="hidden" animate={"visible"} variants={TitleAnim}>
