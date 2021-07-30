@@ -269,14 +269,14 @@ function Index() {
           </TitleContainer>
           <QuestionContainer>
             <Answer initial="hidden" animate={"visible"} variants={TitleAnim}>
-              No.
+              Kinda.
             </Answer>
             <Subtitle
               initial="hidden"
               animate={"visible"}
               variants={SubtitleAnim}
             >
-              Ben White is not free yet.
+              Good luck at Arsenal, Ben.
             </Subtitle>
           </QuestionContainer>
           <CounterOuterContainer>
